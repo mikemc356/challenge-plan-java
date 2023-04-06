@@ -36,8 +36,8 @@ public class QueueListener {
             InsufficientDataException, InternalException, InvalidResponseException, NoSuchAlgorithmException,
             ServerException, XmlParserException, IllegalArgumentException, IOException {
         logger.info("Unpacker event received: {}", inputFile);
-        MinioClient minioClient = MinioClient.builder().endpoint("http://52.87.255.213:9000")
-                .credentials("apricot", "apricotapricot").build();
+        MinioClient minioClient = MinioClient.builder().endpoint("http://minio-mike-mcnamee.flows-dev-cluster-7c309b11fc78649918d0c8b91bcb5925-0000.eu-gb.containers.appdomain.cloud:80")
+                .credentials("minio", "miniopassword").build();
         String targetFile = "/tmp/" + inputFile + ".formatted";
         try (InputStream stream = minioClient.getObject(
                 GetObjectArgs.builder()
