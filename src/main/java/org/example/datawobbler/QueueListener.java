@@ -31,7 +31,7 @@ public class QueueListener {
 
     private static Logger logger = LoggerFactory.getLogger(QueueListener.class);
 
-    @RabbitListener(queues = { "unpacker" })
+    @RabbitListener(queues = { "formatter-queue" })
     public void onFileReceived(String inputFile) throws InvalidKeyException, ErrorResponseException,
             InsufficientDataException, InternalException, InvalidResponseException, NoSuchAlgorithmException,
             ServerException, XmlParserException, IllegalArgumentException, IOException {
