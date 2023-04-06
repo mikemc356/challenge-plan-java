@@ -1,4 +1,4 @@
-FROM eclipse-temurin:17-jdk-alpine
+FROM maven:3.6.0-jdk-11-slim
 VOLUME /tmp
 RUN mvn pom.xml clean package
 COPY target/*.jar app.jar
